@@ -12,6 +12,10 @@ jobs:
     - name: Run a one-line script
       run: echo "Hello, world! (edited inside the PR)"
     - name: Run a multi-line script
+      env:
+        WORKFLOW_KEY: "defined in the workflow"
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+        env
